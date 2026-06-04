@@ -108,12 +108,12 @@ h1::after{
     font-weight: 500;
     letter-spacing: 0.5px;
 }
-.cpy-btn{
+.copy-btn{
     cursor: pointer;
     color: #64748b;
-    transition: color;
+    transition: color 0.2s;
 }
-.cpy-btn:hover{
+.copy-btn:hover{
     color: #667eea;
 
 }
