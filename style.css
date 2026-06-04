@@ -1,0 +1,124 @@
+/**/
+@import url(https://fonts.googleapis.com/css?family=Akt:100,200,300,regular,500,600,700,800,900);
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Akt";
+}
+body
+{
+    /*it will change the color apperance 
+      1) the linear - gradient basically have 3 dimensions in which 1st is the degree between the lines
+      2) It is the color which lies in the left part
+      3) It is the color which lies in the right part
+      Note : We can clearly see the property when we give the color as black 
+    */
+    background: linear-gradient(135deg,#83a8df,#c3cfe2);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+/*the main container*/
+
+.container{
+    background-color: white;
+    border-radius: 1rem;
+    /*the internal distance means that div container internal distance*/
+    padding: 2rem;
+    width: 100%;
+    max-width: 800px;
+    /*doubt*/
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+
+}
+h1{
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+/**/
+h1::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    /*Here the starting point of the line will be at the center but we don't want that so we use 'translateX'*/
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 3px;
+    background-color: #667eea;
+    border-radius: 2px;
+
+}
+
+#generate-btn{
+    background:linear-gradient(45deg,#667eea,#764ba2);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+#generate-btn:hover{
+    transform:translateY(-2px);
+    box-shadow: 0 6px 10px rgba(102,126,234,0.3);
+}
+#generate-btn:active{
+    transform: translateY(0);
+}
+/*doubt*/
+.palette-container{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit,minmax(130px,1fr));
+}
+.color-box{
+    border-radius: 10px;
+    /**/
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+.color-box:hover{
+    transform: translateY(-5px);
+}
+.color{
+    height: 120px;
+    cursor: pointer;
+}
+.color-info{
+    background-color: #fff;
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+.hex-value{
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+.cpy-btn{
+    cursor: pointer;
+    color: #64748b;
+    transition: color;
+}
+.cpy-btn:hover{
+    color: #667eea;
+
+}
+@media(max-width:768px){
+    .palette-container{
+        grid-template-columns: repeat(auto-fit,minmax(100px,));
+    }
+}
